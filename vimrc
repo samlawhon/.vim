@@ -1,7 +1,6 @@
 " Only the best color theme
 colo iceberg
 
-" Boring settings
 " Tim Pope's `sensible.vim` takes care of many others
 set nocompatible
 filetype plugin on
