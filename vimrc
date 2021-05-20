@@ -1,3 +1,8 @@
+" =============================================================================
+" Editor settings
+" =============================================================================
+" Most configuration is done as individual plugins under ~/.vim/plugin
+
 " Only the best color theme
 colo iceberg
 
@@ -18,3 +23,4 @@ set shiftround
 set number
 set relativenumber
 set nowrap
+set hlsearch

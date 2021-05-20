@@ -3,4 +3,6 @@ function FlakeLintCurrentFile()
   exe "copen"
 endfunction
 
-command FlakeLint call FlakeLintCurrentFile()
+if !exists(':FlakeLint')
+  command FlakeLint call FlakeLintCurrentFile()
+endif

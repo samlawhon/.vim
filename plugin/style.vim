@@ -43,7 +43,7 @@ augroup yaml
   autocmd BufRead BufNewFile *.yml setlocal filtype=yaml
   autocmd FileType yaml setlocal
     \ tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    \ autoindent fileformat=unix nohlsearch
+    \ autoindent fileformat=unix
 augroup END
 
 " MakeFile
