@@ -24,3 +24,7 @@ set number
 set relativenumber
 set nowrap
 set hlsearch
+
+iab pymain if __name__ == "__main__":
+autocmd FileType python setlocal makeprg=flake8
+autocmd QuickFixCmdPost [^l]* cwindow

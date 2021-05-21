@@ -1,6 +1,5 @@
 function BlackCurrentFile()
-  exe "cexpr system('black ' . shellescape(expand('%')))"
-  exe "copen"
+  exe "%!black %"
 endfunction
 
 if !exists(':Black')
