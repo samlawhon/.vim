@@ -9,6 +9,10 @@ endfunction
 command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<f-args>)
 command! -nargs=+ -complete=file_in_path -bar LGrep lgetexpr Grep(<f-args>)
 
+" `==#` checks equality with case matching. The ternary here checks if we are on
+" the command line and that the expression is exactly "grep". If so, change it
+" to "Grep". Otherwise, the "grep" stays in place, since we're not on the
+" command line.
 cnoreabbrev <expr> grep  (getcmdtype() ==# ':' && getcmdline() ==# 'grep')  ? 'Grep'  : 'grep'
 cnoreabbrev <expr> lgrep (getcmdtype() ==# ':' && getcmdline() ==# 'lgrep') ? 'LGrep' : 'lgrep'
 

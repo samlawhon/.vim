@@ -4,7 +4,6 @@ function! Make(...)
 endfunction
 
 command! -nargs=+ -complete=file_in_path -bar Make  cgetexpr Make(<f-args>)
-cnoreabbrev <expr> make  (getcmdtype() ==# ':' && getcmdline() ==# 'make')  ? 'Make'  : 'make'
 
 augroup quickfix
   autocmd!

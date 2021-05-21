@@ -24,7 +24,15 @@ set number
 set relativenumber
 set nowrap
 set hlsearch
+set wildignore=*.o,*.obj,*.db,*node_modules*
 
-iab pymain if __name__ == "__main__":
-autocmd FileType python setlocal makeprg=flake8
 autocmd QuickFixCmdPost [^l]* cwindow
+
+" Default file style - four spaces for tabs, softtabstop, etc.
+augroup default
+  autocmd!
+  autocmd BufWritePre * %s/\s\+$//e  " Delete trailing whitespace on save
+  autocmd FileType * setlocal tabstop=4
+    \ softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent
+    \ list listchars=tab:>-,trail:·
+augroup END
