@@ -1,8 +1,6 @@
 " =============================================================================
 " Editor settings
 " =============================================================================
-" Most configuration is done as individual plugins under ~/.vim/plugin
-
 " Only the best color theme
 colo iceberg
 
@@ -26,13 +24,38 @@ set nowrap
 set hlsearch
 set wildignore=*.o,*.obj,*.db,*node_modules*
 
+" Automatically open the quickfix menu if there are results sent to it
 autocmd QuickFixCmdPost [^l]* cwindow
 
 " Default file style - four spaces for tabs, softtabstop, etc.
 augroup default
   autocmd!
   autocmd BufWritePre * %s/\s\+$//e  " Delete trailing whitespace on save
-  autocmd FileType * setlocal tabstop=4
-    \ softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent
+  autocmd FileType *
+    \ setlocal tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
     \ list listchars=tab:>-,trail:·
 augroup END
+
+" For some reason, ftplugin/vim.vim isn't working. Look into that
+augroup vim
+  autocmd!
+  autocmd FileType vim
+      \ setlocal tabstop=2
+      \ softtabstop=2
+      \ shiftwidth=2
+      \ expandtab
+      \ autoindent
+      \ fileformat=unix
+      \ textwidth=120
+augroup END
+
+" Automatically create folders when writing a new file
+autocmd BufWritePre *
+  \ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
+    \ call mkdir(expand('<afile>:h'), 'p') |
+  \ endif
