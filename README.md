@@ -1,5 +1,6 @@
 # Installation
 
 ```
-git clone --recursive https://github.com/renzmann/vinimal ~/.vim
+$ cd ~
+$ git clone --recursive https://github.com/renzmann/.vim
 ```
