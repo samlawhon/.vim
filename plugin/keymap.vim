@@ -13,10 +13,6 @@ nnoremap <C-y>                2<C-Y>
 let mapleader=" "
 nnoremap <Space> <Nop>
 
-" Make sure that `stty start undef` is in ~/.bashrc
-" https://stackoverflow.com/a/21808952
-nnoremap <C-w><C-q>           <C-w>q
-
 " Fast escape
 imap jk                       <Esc>
 omap jk                       <Esc>

@@ -1,6 +1,9 @@
 " =============================================================================
 " Editor settings
 " =============================================================================
+" Make sure that `stty start undef` is in ~/.bashrc
+" https://stackoverflow.com/a/21808952
+
 " Only the best color theme
 colo iceberg
 
@@ -8,10 +11,6 @@ colo iceberg
 set nocompatible
 filetype plugin on
 set encoding=utf-8
-set t_co=256
-set t_ut=
-set t_vb=
-set background=dark
 set noerrorbells
 set visualbell
 set cursorline
@@ -23,39 +22,25 @@ set relativenumber
 set nowrap
 set hlsearch
 set wildignore=*.o,*.obj,*.db,*node_modules*
+set list listchars=tab:>-,trail:·
 
-" Automatically open the quickfix menu if there are results sent to it
-autocmd QuickFixCmdPost [^l]* cwindow
+" Default file style modeled after PEP8
+set softtabstop=4
+set shiftwidth=4
+set textwidth=85
+set expandtab
+set autoindent
 
-" Default file style - four spaces for tabs, softtabstop, etc.
 augroup default
   autocmd!
-  autocmd BufWritePre * %s/\s\+$//e  " Delete trailing whitespace on save
-  autocmd FileType *
-    \ setlocal tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ textwidth=79
-    \ expandtab
-    \ autoindent
-    \ list listchars=tab:>-,trail:·
+  " Automatically open the quickfix menu if there are results sent to it
+  autocmd QuickFixCmdPost [^l]* cwindow
+  " Common save hooks
+  autocmd BufWritePre
+    \ " Delete trailing whitespace
+    \ * %s/\s\+$//e
+    \ " Automatically create folders
+    \ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
+      \ call mkdir(expand('<afile>:h'), 'p') |
+    \ endif
 augroup END
-
-" For some reason, ftplugin/vim.vim isn't working. Look into that
-augroup vim
-  autocmd!
-  autocmd FileType vim
-      \ setlocal tabstop=2
-      \ softtabstop=2
-      \ shiftwidth=2
-      \ expandtab
-      \ autoindent
-      \ fileformat=unix
-      \ textwidth=120
-augroup END
-
-" Automatically create folders when writing a new file
-autocmd BufWritePre *
-  \ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
-    \ call mkdir(expand('<afile>:h'), 'p') |
-  \ endif
