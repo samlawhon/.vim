@@ -6,7 +6,9 @@ if exists("g:loaded_supergrep")
 end
 let g:loaded_supergrep = 1
 
-set grepprg=rg\ --vimgrep
+if executable('rg')
+  set grepprg=rg\ --vimgrep
+endif
 
 function! Grep(...)
   return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))
