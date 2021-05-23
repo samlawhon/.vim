@@ -1,3 +1,8 @@
+if exists("g:loaded_supermake")
+  finish
+end
+let g:loaded_supermake = 1
+
 " See grep.vim for the inspiration of this
 function! Make(...)
   return system(join([&makeprg] + [expandcmd(join(a:000, ' '))], ' '))
