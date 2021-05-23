@@ -10,6 +10,7 @@ colo iceberg
 " Tim Pope's `sensible.vim` takes care of many others
 set nocompatible
 filetype plugin on
+set background=dark
 set encoding=utf-8
 set noerrorbells
 set visualbell
