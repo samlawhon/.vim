@@ -23,11 +23,12 @@ set relativenumber
 set nowrap
 set hlsearch
 set wildignore=*.o,*.obj,*.db,*node_modules*
+set wildignore+=tags,.*.un~,*.pyc
 set list listchars=tab:>-,trail:·
 set mouse=a
 
 " Recursive search from $PWD and current file dir with `:find`
-setglobal path=.,,./**,**,
+set path=.,,./**,**,
 
 " Default file style modeled after PEP8 and `black` defaults
 set softtabstop=4
