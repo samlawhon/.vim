@@ -1,7 +1,7 @@
 " =============================================================================
 "                               Editor settings
 " =============================================================================
-" Make sure that `stty start undef` is in ~/.bashrc
+" Make sure that `stty start undef` and `stty -ixon` are in ~/.bashrc
 " https://stackoverflow.com/a/21808952
 
 " Only the best color theme
@@ -27,7 +27,7 @@ set list listchars=tab:>-,trail:·
 set mouse=a
 
 " Recursive search from $PWD and current file dir with `:find`
-set path+=**,.,./**
+setglobal path=.,,./**,**,
 
 " Default file style modeled after PEP8 and `black` defaults
 set softtabstop=4
