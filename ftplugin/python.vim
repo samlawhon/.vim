@@ -1,3 +1,8 @@
+if exists("b:did_ftplugin")
+  finish
+endif
+let b:did_ftplugin = 1
+
 " abbreviations/snippets
 iab pymain if __name__ == "__main__":
 iab innit def __init__(self,
