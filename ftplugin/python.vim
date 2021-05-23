@@ -30,3 +30,12 @@ if !exists(':Black')
 endif
 
 autocmd! BufWritePost *.py Black
+
+nnoremap <silent><buffer> [[ m':call search('^\s*\(class\\|def\)\>', "bW")<CR>
+vnoremap <silent><buffer> [[ m':<C-U>exe "normal! gv"<Bar>call search('^\s*\(class\\|def\)\>', "bW")<CR>
+nnoremap <silent><buffer> ]] m':call search('^\s*\(class\\|def\)\>', "W")<CR>
+vnoremap <silent><buffer> ]] m':<C-U>exe "normal! gv"<Bar>call search('^\s*\(class\\|def\)\>', "W")<CR>
+nnoremap <silent><buffer> [] m':call search('^\s*end\(class\\|def\)\>', "bW")<CR>
+vnoremap <silent><buffer> [] m':<C-U>exe "normal! gv"<Bar>call search('^\s*end\(class\\|def\)\>', "bW")<CR>
+nnoremap <silent><buffer> ][ m':call search('^\s*end\(class\\|def\)\>', "W")<CR>
+vnoremap <silent><buffer> ][ m':<C-U>exe "normal! gv"<Bar>call search('^\s*end\(class\\|def\)\>', "W")<CR>
