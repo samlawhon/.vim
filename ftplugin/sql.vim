@@ -8,10 +8,10 @@ setlocal softtabstop=2
 setlocal shiftwidth=2
 setlocal textwidth=120
 
-" Linter external call
-function SQLintCurrentFile()
-  exe "cexpr system('sqlfluff lint ' . shellescape(expand('%')))"
-  exe "copen"
-endfunction
-
-command! SQLint cgetexpr SQLintCurrentFile()
+if executable("sql-formatter")
+  " Format on save
+  command! SqlFormat exec '%!sql-formatter %' <bar> exec 'edit!'
+  autocmd! BufWritePost *.sql SqlFormat
+else
+  exec 'echom "WARNING: sql-formatter not found"'
+endif
