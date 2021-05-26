@@ -18,13 +18,12 @@ endfunction
 command! Lint cgetexpr LintCurrentFile()
 
 if executable("black")
-  command! Black exe "%!black %" <bar> exe "edit!"
-  autocmd! BufWritePost <buffer> Black
+  command! Black exe "%!black %" <bar> exe "silent redraw!"
 endif
 
 augroup python
 if executable(&makeprg)
-  autocmd! BufWritePre <buffer> Lint
+  autocmd! BufWritePost <buffer> Lint
 endif
 
 " Navigate between `class` and `def` using [[ and ]]

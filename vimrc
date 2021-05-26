@@ -42,9 +42,7 @@ augroup default
   " Automatically open the quickfix menu if there are results sent to it
   autocmd QuickFixCmdPost [^l]* cwindow
   " Common save hooks
-  autocmd BufWritePre
-    \ " Delete trailing whitespace
-    \ * %s/\s\+$//e
+  autocmd BufWritePre *
     \ " Automatically create folders
     \ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
       \ call mkdir(expand('<afile>:h'), 'p') |
