@@ -53,6 +53,7 @@ augroup END
 cabbrev fidn find
 cabbrev greo grep
 cabbrev vsf vert sfind
+cabbrev %% %:p:h
 " `cd current file`
 cabbrev ccf cd %:p:h
 
