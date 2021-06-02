@@ -26,6 +26,7 @@ set wildignore=*.o,*.obj,*.db,*node_modules*
 set wildignore+=tags,.*.un~,*.pyc
 set list listchars=tab:>-,trail:·
 set mouse=a
+set showcmd
 
 " Recursive search from $PWD and current file dir with `:find`
 set path=.,,./**,**,
