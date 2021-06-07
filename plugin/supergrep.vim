@@ -11,7 +11,7 @@ if executable('rg')
 endif
 
 function! Grep(...)
-  return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))
+  return system(join([&grepprg] + [expand(join(a:000, ' '))], ' '))
 endfunction
 
 command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<f-args>)
