@@ -18,7 +18,7 @@ endfunction
 command! Lint cgetexpr LintCurrentFile()
 
 if executable("black")
-  command! Black exe "%!black %" <bar> exe "silent redraw!"
+  command! Format exe "%!black %" <bar> exe "silent redraw!"
 endif
 
 augroup python

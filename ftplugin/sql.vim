@@ -9,8 +9,7 @@ setlocal shiftwidth=4
 setlocal textwidth=120
 
 if executable("cli-sql-formatter")
-  " Format on save
-  command! SqlFormat exec '%!cli-sql-formatter -u -i 4 %' <bar> exec 'silent redraw!'
+  command! Format exec '%!cli-sql-formatter -u -i 4 %' <bar> exec 'silent redraw!'
 else
   exec 'echom "WARNING: sql formatter not found"'
 endif
