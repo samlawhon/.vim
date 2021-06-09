@@ -1,8 +1,3 @@
-if exists("b:did_ftplugin")
-  finish
-endif
-let b:did_ftplugin = 1
-
 setlocal tabstop=4
 setlocal softtabstop=4
 setlocal shiftwidth=4
@@ -12,5 +7,5 @@ if executable("cli-sql-formatter")
   " Format on save
   command! SqlFormat exec '%!cli-sql-formatter -u -i 4 %' <bar> exec 'silent redraw!'
 else
-  exec 'echom "WARNING: sql formatter not found"'
+  exec 'echom "WARNING: sql formatter not found. Try npm install cli-sql-formatter."'
 endif
