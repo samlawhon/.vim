@@ -7,7 +7,7 @@ end
 let g:loaded_supergrep = 1
 
 if executable('rg')
-  set grepprg=rg\ --vimgrep
+  set grepprg=rg\ --vimgrep\ -i
 endif
 
 function! Grep(...)

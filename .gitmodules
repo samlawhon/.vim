@@ -13,3 +13,6 @@
 [submodule "pack/themes/start/iceberg"]
 	path = pack/themes/start/iceberg
 	url = git@github.com:cocopon/iceberg.vim
+[submodule "pack/julia/start/julia-vim"]
+	path = pack/julia/start/julia-vim
+	url = git@github.com:JuliaEditorSupport/julia-vim
