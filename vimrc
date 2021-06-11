@@ -60,6 +60,25 @@ cabbrev ccf cd %:p:h
 
 
 " =============================================================================
+"                              Plugin Management
+" =============================================================================
+" Automatically install plugins that are missing
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'psf/black'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
+" =============================================================================
 "                              Keyboard Shortcuts
 " =============================================================================
 " Search for [<letter>] to see what's mapped under <Leader><letter>.
