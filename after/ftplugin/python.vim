@@ -12,10 +12,6 @@ endfunction
 
 command! Lint cgetexpr LintCurrentFile()
 
-if executable("black")
-  command! Black exe "%!black %" <bar> exe "silent redraw!"
-endif
-
 augroup python
 if executable(&makeprg)
   autocmd! BufWritePost <buffer> Lint
