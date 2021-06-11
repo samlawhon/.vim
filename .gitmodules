@@ -1,18 +1,3 @@
-[submodule "pack/tpope/start/vim-fugitive"]
-	path = pack/tpope/start/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive
-[submodule "pack/tpope/start/vim-sensible"]
-	path = pack/tpope/start/vim-sensible
-	url = git@github.com:tpope/vim-sensible
-[submodule "pack/tpope/start/vim-surround"]
-	path = pack/tpope/start/vim-surround
-	url = git@github.com:tpope/vim-surround
-[submodule "pack/tpope/start/vim-commentary"]
-	path = pack/tpope/start/vim-commentary
-	url = git@github.com:tpope/vim-commentary
 [submodule "pack/themes/start/iceberg"]
 	path = pack/themes/start/iceberg
 	url = git@github.com:cocopon/iceberg.vim
-[submodule "pack/julia/start/julia-vim"]
-	path = pack/julia/start/julia-vim
-	url = git@github.com:JuliaEditorSupport/julia-vim
