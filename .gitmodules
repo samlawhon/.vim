@@ -1,3 +1,6 @@
 [submodule "pack/themes/start/iceberg"]
 	path = pack/themes/start/iceberg
 	url = git@github.com:cocopon/iceberg.vim
+[submodule "pack/themes/start/gruvbox"]
+	path = pack/themes/start/gruvbox
+	url = git@github.com:morhetz/gruvbox
