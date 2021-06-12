@@ -4,7 +4,7 @@
 " Make sure that `stty start undef` and `stty -ixon` are in ~/.bashrc
 " https://stackoverflow.com/a/21808952
 
-" Only the best color theme
+" Only the best color theme(s)
 colo iceberg
 
 " Tim Pope's `sensible.vim` takes care of many others
@@ -67,23 +67,22 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
+" Initialize plugins
 call plug#begin('~/.vim/plugged')
-
 Plug 'psf/black'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
-
 call plug#end()
+
 
 " =============================================================================
 "                              Keyboard Shortcuts
 " =============================================================================
 " Search for [<letter>] to see what's mapped under <Leader><letter>.
 " e.g. /[s] will take you to the settings navigation section.
-
 
 " Faster scrolling
 nnoremap <C-e>                2<C-E>
@@ -117,6 +116,8 @@ onoremap i;                   :<C-U>execute "normal! v/;\rhs"<CR>
 " [s]ettings navigation
 " -----------------------------------------------------------------------
 nnoremap <silent><Leader>si   :<C-u>e $MYVIMRC<CR>
+nnoremap <silent><Leader>sn   :<C-u>e ~/.config/nvim/init.vim<CR>
+nnoremap <silent><Leader>sv   :<C-u>e ~/.vim/vimrc<CR>
 nnoremap <silent><Leader>sk   :<C-u>e ~/.vim/plugin/keymap.vim<CR>
 nnoremap <silent><Leader>sp   :<C-u>e ~/.vim/plugin<CR>
 
