@@ -13,6 +13,6 @@ endfunction
 command! Lint cgetexpr LintCurrentFile()
 
 augroup python
-if executable(&makeprg)
+if executable(&makeprg) && !exists("g:py_nolint")
   autocmd! BufWritePost <buffer> Lint
 endif
