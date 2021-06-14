@@ -98,6 +98,9 @@ omap jk                       <Esc>
 imap kj                       <Esc>
 omap kj                       <Esc>
 
+" Case-insensitive search
+nnoremap <Leader>/            /\c<Left><Left>
+
 " [v]imscript execution
 " -----------------------------------------------------------------------
 " Execute the whole line under cursor in normal mode
