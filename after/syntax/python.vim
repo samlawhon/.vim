@@ -1,3 +1,5 @@
+" SQL Syntax highlighting in python strings
+" -----------------------------------------
 " https://stackoverflow.com/a/35882720
 " SQL syntax file won't load if this is set
 unlet b:current_syntax
@@ -26,7 +28,8 @@ syn region  pythonRawString
     \ start=+[uU]\=[rR]\z('''\|"""\)+ end="\z1" keepend
     \ contains=pythonSpaceError,pythonDoctest,@Spell,@SQL
 
-
+" Python syntax highlighting inside f-strings
+" -------------------------------------------
 " https://phelipetls.github.io/posts/f-strings-syntax-highlighting-in-vim/
 syn match pythonEscape +{{+ contained containedin=pythonfString,pythonfDocstring
 syn match pythonEscape +}}+ contained containedin=pythonfString,pythonfDocstring
