@@ -2,5 +2,5 @@
 
 ```
 $ cd ~
-$ git clone --recursive https://github.com/renzmann/.vim
+$ git clone https://github.com/renzmann/.vim
 ```
