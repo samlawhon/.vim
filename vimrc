@@ -4,6 +4,15 @@
 " Make sure that `stty start undef` and `stty -ixon` are in ~/.bashrc
 " https://stackoverflow.com/a/21808952
 
+" set default 'runtimepath' (without ~/.vim folders)
+let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
+
+" what is the name of the directory containing this file?
+let s:portable = expand('<sfile>:p:h')
+
+" add the directory to 'runtimepath'
+let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+
 " Tim Pope's `sensible.vim` takes care of many others
 set nocompatible
 filetype plugin on
@@ -65,8 +74,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 
 " Initialize plugins
-let s:vimrc_dir = expand('<sfile>:p:h')
-call plug#begin(s:vimrc_dir . '/plugged')
+call plug#begin(s:portable . '/plugged')
 Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
 Plug 'psf/black'
