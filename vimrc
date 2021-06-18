@@ -1,9 +1,21 @@
+" Author: Robert A. Enzmann
+" License: Do anything you like.
+"
+"         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"         ! This vim configuration is portable!
+"         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"
+" Thanks to: https://stackoverflow.com/a/3384476/13215205
+"
+" $ git clone git@github.com:renzmann/.vim ~/robbvim
+" $ vim -u ~/robbvim/vimrc
+
 " =============================================================================
 "                               Editor settings
 " =============================================================================
 " Make sure that `stty start undef` and `stty -ixon` are in ~/.bashrc
 " https://stackoverflow.com/a/21808952
-
+"
 " set default 'runtimepath' (without ~/.vim folders)
 let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
 
