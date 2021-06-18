@@ -12,6 +12,7 @@ set encoding=utf-8
 set noerrorbells
 set visualbell
 set cursorline
+set hidden
 syntax on
 set linebreak
 set shiftround
@@ -64,7 +65,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 
 " Initialize plugins
-call plug#begin('~/.vim/plugged')
+let s:vimrc_dir = expand('<sfile>:p:h')
+call plug#begin(s:vimrc_dir . '/plugged')
 Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
 Plug 'psf/black'
