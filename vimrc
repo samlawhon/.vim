@@ -1,9 +1,9 @@
 " Author: Robert A. Enzmann
 " License: Do anything you like.
 "
-"         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-"         ! This vim configuration is portable!
-"         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"   !       This vim configuration is portable        !
+"   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 "
 " Thanks to: https://stackoverflow.com/a/3384476/13215205
 "
