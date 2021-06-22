@@ -103,7 +103,8 @@ call plug#end()
 " Only the best color theme(s)
 try
     colorscheme gruvbox
-    " Iceberg is also great but misses some syntax highlighting in python like `if`, `or`, etc.
+    " Iceberg is also great but misses some syntax highlighting in python like `if`, `or`, etc. and doesn't work with
+    " language server highlighting features.
     " colorscheme iceberg
 catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme industry
