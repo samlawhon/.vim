@@ -65,6 +65,14 @@ vnoremap <leader>bc           "+y
 
 " [f]in[d] [t]hings
 " -----------------------------------------------------------------------
-nnoremap <leader>f            :find<space>
-nnoremap <leader>d            :b<space>
-nnoremap <leader>t            :tag<space>
+if has("nvim")
+  nnoremap <leader>f            :Files<CR>
+  nnoremap <leader>b            :Buffers<CR>
+  nnoremap <leader>g            :GitFiles<CR>
+  nnoremap <leader>t            :Tags<CR>
+  nnoremap <leader>r            :Rg<CR>
+else
+  nnoremap <leader>f            :find<space>
+  nnoremap <leader>d            :b<space>
+  nnoremap <leader>t            :tag<space>
+endif
