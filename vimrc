@@ -110,3 +110,4 @@ catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme industry
 endtry
 
+autocmd BufRead,BufNew *.sas,*.SAS setlocal filetype=sas
