@@ -57,20 +57,20 @@ nnoremap <silent><leader>h    :<C-u>tabp<CR>
 " [l]
 nnoremap <silent><leader>l    :<C-u>tabn<CR>
 
-" Clip[b]oard commands
+" [c]lipboard [c]ommands
 " -----------------------------------------------------------------------
-nnoremap <leader>bv           "+p
-vnoremap <leader>bv           "+p
-vnoremap <leader>bc           "+y
+nnoremap <leader>cv           "+p
+vnoremap <leader>cv           "+p
+vnoremap <leader>cc           "+y
 
-" [f]in[d] [t]hing[s]
+" fin[d] [b]uffers [a]nd [t]hin[g]s
 " -----------------------------------------------------------------------
 if has("nvim")
-  nnoremap <leader>f            :Files<CR>
+  nnoremap <leader>a            :Files<CR>
   nnoremap <leader>b            :Buffers<CR>
   nnoremap <leader>g            :GitFiles<CR>
   nnoremap <leader>t            :Tags<CR>
-  nnoremap <leader>s            :Rg<CR>
+  nnoremap <leader>d            :Rg<CR>
 else
   nnoremap <leader>f            :find<space>
   nnoremap <leader>b            :b<space>
