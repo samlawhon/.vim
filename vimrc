@@ -46,7 +46,7 @@ set nowrap
 set hlsearch
 set wildignore=*.o,*.obj,*.db-whl,*.db-shm,*node_modules*
 set wildignore+=tags,.*.un~,*.pyc
-set list listchars=tab:>-,trail:·
+set list listchars=tab:>\ ,trail:·
 set mouse=a
 set showcmd
 
