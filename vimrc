@@ -1,4 +1,4 @@
-" Author: Robert A. Enzmann
+" Authors: mostly Robert A. Enzmann, Sam Lawhon
 " License: Do anything you like.
 "
 "   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -7,8 +7,8 @@
 "
 " Thanks to: https://stackoverflow.com/a/3384476/13215205
 "
-" $ git clone git@github.com:renzmann/.vim ~/robbvim
-" $ vim -u ~/robbvim/vimrc
+" $ git clone git@github.com:samlawhon/.vim.git ~/samvim
+" $ vim -u ~/samvim/vimrc
 "
 " set default 'runtimepath' (without ~/.vim folders)
 let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
@@ -46,8 +46,8 @@ set nowrap
 set hlsearch
 set wildignore=*.o,*.obj,*.db-whl,*.db-shm,*node_modules*
 set wildignore+=tags,.*.un~,*.pyc
-set list listchars=tab:>\ ,trail:·
-set mouse=a
+set list
+set listchars=tab:→\ ,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 set showcmd
 
 " Recursive search from $PWD and current file dir with `:find`
@@ -60,6 +60,25 @@ set textwidth=85
 set expandtab
 set autoindent
 
+" Imported from Daniel's Vim stuff
+let mapleader = "s"
+nmap - <leader>
+nnoremap ; :
+nnoremap <CR> :nohlsearch<CR><CR>
+nnoremap <silent> <leader>; :Lines<CR>
+nnoremap <silent> <leader>e :Files <CR>
+nnoremap <silent> <leader>a :set list! <CR>
+nnoremap <silent> <leader>t :Files ~<CR>
+nnoremap <silent> <leader>g :GFiles <CR>
+nnoremap <silent> <leader>gd :GoDoc <CR>
+nnoremap <silent> <leader>o :Buffers <CR>
+nnoremap <silent> <leader>r :Rg <CR>
+nnoremap <silent> <leader>w :Rg <C-R><C-W><CR>
+nnoremap <silent> <leader>W :Rg <C-R><C-A><CR>
+nnoremap <silent> <c-t> :tabnew<CR>
+inoremap jk <Esc>
+inoremap jj <C-]>
+
 augroup default
   autocmd!
   " Automatically open the quickfix menu if there are results sent to it
@@ -71,14 +90,6 @@ augroup default
       \ call mkdir(expand('<afile>:h'), 'p') |
     \ endif
 augroup END
-
-" Command line typos
-cabbrev fidn find
-cabbrev greo grep
-cabbrev vsf vert sfind
-cabbrev %% %:p:h
-" `cd current file`
-cabbrev ccf cd %:p:h
 
 " =============================================================================
 "                              Plugin Management
@@ -93,7 +104,6 @@ call plug#begin(s:portable . '/plugged')
 Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
 Plug 'psf/black'
-Plug 'JuliaEditorSupport/julia-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sensible'
@@ -110,4 +120,3 @@ catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme industry
 endtry
 
-autocmd BufRead,BufNew *.sas,*.SAS setlocal filetype=sas
